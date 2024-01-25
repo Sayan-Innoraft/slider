@@ -12,6 +12,10 @@ next.onclick = function () {
         itemActive = 0;
     }
     showSlider();
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 3000);
 }
 prev.onclick = function () {
     itemActive--;
@@ -19,6 +23,10 @@ prev.onclick = function () {
         itemActive = countItem - 1;
     }
     showSlider();
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 3000);
 }
 let refreshInterval = setInterval(() => {
     next.click();
